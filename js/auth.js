@@ -1,7 +1,7 @@
 // js/auth.js
 
 // 1. Import Firebase services (ONLY ONCE, AT THE TOP)
-import { auth, db } from './firebaseConfig.js';
+import { auth, db } from 'firebaseConfig.js';
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
