@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - LBA Jobs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-blue-600">LBA Admin Panel</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-gray-700 mr-4" id="admin-email">admin@lba.com</span>
+                    <button id="logout-button" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+        <div id="loader" class="fixed top-0 left-0 w-screen h-screen
+                            bg-white bg-opacity-90 flex
+                            items-center justify-center z-50">
+        <div class="text-xl font-medium text-gray-700">Loading...</div>
+        </div>
+
+    <main id="main-content" class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+            <h1 class="text-2xl font-bold text-gray-900 mb-6">Upload New Jobs</h1>
+            
+            <p class="text-gray-600 mb-4">
+                Upload a CSV file with the following headers: <br>
+                <code class="text-sm bg-gray-100 p-1 rounded">title,companyName,location,package,expiryDate,applyUrl</code>
+            </p>
+            <p class="text-gray-600 mb-6">
+                The <code class="text-sm bg-gray-100 p-1 rounded">expiryDate</code> must be in <strong class="text-gray-800">YYYY-MM-DD</strong> format.
+            </p>
+
+            <form id="upload-form" class="space-y-5">
+                <div>
+                    <label for="csv-file" class="block text-sm font-medium text-gray-700">CSV File</label>
+                    <input type="file" id="csv-file" name="csv-file" accept=".csv" required
+                           class="mt-1 block w-full text-sm text-gray-500
+                                  file:mr-4 file:py-2 file:px-4
+                                  file:rounded-lg file:border-0
+                                  file:text-sm file:font-semibold
+                                  file:bg-blue-50 file:text-blue-700
+                                  hover:file:bg-blue-100">
+                </div>
+
+                <div id="upload-status" class="hidden"></div>
+
+                <button type="submit" id="upload-button"
+                        class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50">
+                    Upload Jobs
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    
+    <script type="module" src="/js/admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - LBA Jobs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-blue-600">LBA Job Portal</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-gray-700 mr-4" id="student-email">student@lba.com</span>
+                    <button id="logout-button" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+        <div id="loader" class="fixed top-0 left-0 w-screen h-screen
+                            bg-white bg-opacity-90 flex
+                            items-center justify-center z-50">
+        <div class="text-xl font-medium text-gray-700">Loading...</div>
+        </div>
+
+    <main id="main-content" class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-6">Available Jobs</h1>
+
+        <div id="loading-spinner" class="text-center py-10">
+            <p class="text-gray-500">Loading jobs...</p>
+        </div>
+
+        <div id="job-list-container" class="space-y-5">
+            
+            <div class="bg-white shadow-lg rounded-xl overflow-hidden border border-gray-200">
+                <div class="p-6">
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start">
+                        <div class="flex-1 min-w-0">
+                            <h2 class="text-2xl font-bold text-gray-800 truncate">Data Analyst</h2>
+                            <p class="text-lg font-semibold text-gray-600 mt-1">TechCorp</p>
+                            <div class="flex items-center text-gray-500 mt-2 space-x-4">
+                                <span>📍 New York</span>
+                                <span>💰 10-12 LPA</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0 flex flex-col sm:items-end space-y-3">
+                            <span class="inline-flex items-center px-4 py-1.5 rounded-full text-base font-semibold bg-red-100 text-red-800 border border-red-300">
+                                Expires in 3 days
+                            </span>
+                            <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg text-sm font-medium text-center shadow-sm">
+                                Apply Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-lg rounded-xl overflow-hidden border border-gray-200">
+                <div class="p-6">
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start">
+                        <div class="flex-1 min-w-0">
+                            <h2 class="text-2xl font-bold text-gray-800 truncate">Product Manager</h2>
+                            <p class="text-lg font-semibold text-gray-600 mt-1">BizInc</p>
+                            <div class="flex items-center text-gray-500 mt-2 space-x-4">
+                                <span>📍 Remote</span>
+                                <span>💰 15 LPA</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 sm:mt-0 sm:ml-6 flex-shrink-0 flex flex-col sm:items-end space-y-3">
+                            <span class="inline-flex items-center px-4 py-1.5 rounded-full text-base font-semibold bg-green-100 text-green-800 border border-green-300">
+                                Expires in 20 days
+                            </span>
+                            <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg text-sm font-medium text-center shadow-sm">
+                                Apply Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script type="module" src="/js/student.js"></script>
+
+</body>
+</html>
